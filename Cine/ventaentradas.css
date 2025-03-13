@@ -1,0 +1,93 @@
+@charset "UTF-8";
+@font-face {
+    font-family: "fuenteNavidad";
+    src: url('snowforsanta-webfont.woff') format("woff"),
+        url('snowforsanta-webfont.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+
+}
+body{
+    font-family: "fuenteNavidad";
+    background-image: url("img/nieve.gif"); 
+    background-position: center 25%; 
+    background-size: cover;     
+}
+
+h1,h2{
+    font-size: 54px;
+    color: white;
+    text-align: center;
+    height: 18px;
+    
+}
+h3{font-size: 36px;}
+table{
+    background-color: white;
+    width: 60%;
+
+}
+#trSalas{
+    font-size: 30px;
+    font-weight: bold;
+    
+}
+.cartel{
+    background-color: lightblue;
+    width: 100px;
+}
+
+img{
+    cursor: pointer;
+}
+img:hover{ 
+    opacity: 0.5;
+    filter:alpha(opacity=50);
+    -moz-opacity:0.5;
+    -khtml-opacity: 0.5;
+}
+button{
+    height: 40px;
+    width: 100px;
+    background-color:lightblue;
+   
+    font-weight: bold;
+}
+a{
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: bold;
+}
+#contenedor{
+    text-align: center;
+}
+.libre{
+    
+    background-color: green;
+    color: white;
+    cursor: pointer;
+}
+.libre:hover{
+    background-color: lightgreen;
+}
+.ocupado{
+    background-color: red;
+    cursor: none;
+    /*color: black;*/
+}
+.seleccionado{
+    background-color: yellowgreen;        
+    color: black;
+}
+.libre, .ocupado, .seleccionado{
+    border-top-right-radius: 35px;
+    border-top-left-radius: 35px;
+    width: 35px;
+    margin: 1px;
+    
+}
+#btnConfirm{
+    border-radius: 20px;
+    cursor: pointer;
+    
+}

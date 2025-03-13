@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket</title>
+    <link rel="stylesheet" href="ticket.css">
+    <script>
+        var fecha=new Date();
+        var importe;
+        var dia=fecha.getDate();
+        var mes=fecha.getMonth()+1;
+        var anio=fecha.getFullYear();        
+        function mostrarTicket(){
+            var pelicula = localStorage.getItem("pelicula");
+	alert(pelicula);
+            var localidades=localStorage.getItem("asientos");
+            var precio=localStorage.getItem("importe");
+            lblPeli.innerText=pelicula;
+            lblFecha.innerText=dia+"/"+mes+"/"+anio;
+            lblButacas.innerText="LOCALIDADES: "+localidades;
+            lblImporte.innerText="Precio total: "+precio+"€";
+        }
+
+        
+    </script>
+</head>
+<body onload="mostrarTicket();">
+    <div id="boleto">
+        <table >
+            <tr><td><label id="lblFecha"></label></td></tr>
+            <tr id="trPeli">
+                <td><label id="lblPeli"></label></td>
+            </tr>
+            <tr><td><p id="lblButacas"></td></tr>
+            <tr id="trImporte"> <td><label id="lblImporte"></label></td></tr>
+        </table>
+    </div>
+</body>
+</html>

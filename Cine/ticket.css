@@ -1,0 +1,25 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: "fuenteNieve";
+    src: url('snowforsanta-webfont.woff') format("woff"),
+        url('snowforsanta-webfont.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+body{
+    background-image: url("img/boleto.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    font-family: "fuenteNieve";
+}
+table{
+    margin-top: 50px;
+    margin-left: 70px;
+    width: 80%;
+}
+#lblPeli{font-size: 32px;}
+#lblFecha{font-size: 18px;}
+#trImporte{text-align:right}
+#trPeli{height: 110px;}
