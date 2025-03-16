@@ -62,22 +62,22 @@ function pintarButacas(){
 /*Cuando se selecciona una localidad se comprueba si esta libre y se guarda o se borra
 de los arrays de control*/
 function seleccionar(){
-    var butacaId=this.event.target.id;
-    var index=0;
-    var indAs=0;       
-    butacaId=parseInt(butacaId.substring(6));
-    if(this.event.target.className=="libre"){
+    var butacaId = this.event.target.id;
+    butacaId = parseInt(butacaId.substring(6));
+
+    if (this.event.target.className === "libre") {
         vendidas.push(butacaId);
         asientos.push(butacaId);
-        this.event.target.className="seleccionado";
+        this.event.target.className = "seleccionado";
         butacaSel++;
-    }
-    else{
-        index=vendidas.indexOf(butacaId);
-        vendidas.splice(index,1);
-        indAs=asientos.indexOf(butacaId);
-        asientos.splice(index,1);
-        this.event.target.className="libre";
+    } else {
+        let index = vendidas.indexOf(butacaId);
+        if (index !== -1) vendidas.splice(index, 1);  // Eliminar correctamente de vendidas
+
+        let indAs = asientos.indexOf(butacaId);
+        if (indAs !== -1) asientos.splice(indAs, 1);  
+
+        this.event.target.className = "libre";
         butacaSel--;
     }
 }
