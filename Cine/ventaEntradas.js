@@ -1,6 +1,8 @@
 var aPelis=new Array("Que bello es vivir","Solo en casa","Cuento de Navidad");
 var aLoc= new Array(50,120,60);
 var aSalas=new Array("1","2","3");
+var maxButacas=5;
+
 //Almacenamos la localidades vendidas por sala: aVendidas1, aVendidas2 y aVendidas3
 //y las vendidas en la pelicula seleccionada en el array vendidas
 var aVendidas1= new Array();    
@@ -60,7 +62,7 @@ function pintarButacas(){
 }
 
 /*Cuando se selecciona una localidad se comprueba si esta libre y se guarda o se borra
-de los arrays de control*/
+de los arrays de control*/ 
 function seleccionar(){
     var butacaId = this.event.target.id;
     butacaId = parseInt(butacaId.substring(6));
@@ -85,7 +87,7 @@ function seleccionar(){
 /*Compramos las entradas seleccionadas y se actualiza el array de localidades vendidas 
 por sala */
 function confirmarVenta(){
-    if (butacaSel>0){         
+    if (butacaSel>0 && butacaSel<=maxButacas){         
         switch(sala){
             case "1":
                 aVendidas1=vendidas.slice(0,vendidas.length)
@@ -101,9 +103,12 @@ function confirmarVenta(){
         document.getElementById("contenedor").innerHTML="";
         imprimirTicket()
 
+    }
+    else if(butacaSel>maxButacas){
+        alert("No se pueden comprar más de 5 localidades");
     }  
     else{
-        alert("No ha seccionado ninguna localidad")
+        alert("No ha seccionado ninguna localidad");
     }
 }
 /*Mostramos el ticket de compra con la fecha, película, localidades y precio */
